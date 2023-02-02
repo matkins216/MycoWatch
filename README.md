@@ -4,8 +4,6 @@
 This Boilerplate is meant to give a bare bones Mern app that is ready for use in production or locally. This Boilerplate is intended for a single deployment of an express server, serving a compiled react app. 
 
 
-
-
 #### Overview
 
 - There are **two branches**
@@ -75,3 +73,33 @@ In the terminal you will see ``` Local:   http://localhost:5173/``` which will b
 <hr/>
 
 * **Vite.config.js**
+
+In the code below we are setting up the proxy to `/api` on `localhost:8000` where you're express server is running, remember in this environment the client (vite) app is running on ```http://localhost:5173```, so any api calls will go to `localhost:8000/api/whatever-your-endpoint-is`
+
+```js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000'
+      }
+    }
+  },
+  plugins: [react()],
+  build: {
+    manifest: true,
+    rollupOptions: {
+      input: "./src/main.jsx",
+    },
+  },
+});
+```
+
+
+## Resources
+
+- [vite backend Configuration](https://main.vitejs.dev/guide/backend-integration.html)

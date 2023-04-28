@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 mongoose.set('strictQuery', false)
 
 mongoose.connect(
-	'mongodb://127.0.0.1:27017/myapp' // < replace with your database name!
+	'mongodb://127.0.0.1:27017/MycoBook' // < replace with your database name!
 );
 
 const db = mongoose.connection;

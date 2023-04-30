@@ -19,10 +19,10 @@ function Navbar() {
             position: "static",
             background: "none",
             boxShadow: "none",
-            m: '0.5rem'
+            m: '1rem'
         }}
         >
-            <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
+            <FlexBetween mb="0.25rem" p="0.5rem 1rem" color={palette.grey[300]}>
                 <FlexBetween gap="0.75rem">
                     <YardIcon />
                     <Typography variant="h4" fontSize="16px">
@@ -33,8 +33,6 @@ function Navbar() {
                     <Box sx={{ "&:hover": { color: palette.grey[100] } }}>
                         <Link
                             to="/"
-                            
-                            
                         >
                             dashboard
                         </Link>

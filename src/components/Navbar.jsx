@@ -32,9 +32,9 @@ function Navbar() {
                 <FlexBetween gap="2rem">
                     <Box sx={{ "&:hover": { color: palette.grey[100] } }}>
                         <Link
-                            to="/"
+                            to="/dashboard"
                         >
-                            dashboard
+                            Dashboard
                         </Link>
                     </Box>
                     <Box sx={{ "&:hover": { color: palette.grey[100] } }}>

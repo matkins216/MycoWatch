@@ -7,10 +7,8 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./scenes/layout";
 import Dashboard from "./scenes/dashboard";
 import LoginPage from "./scenes/LoginPage"; 
-import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
-const clientId = "707587160486-j7adbuqsr1ostdquto9rhdk783o42jq0.apps.googleusercontent.com";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -18,10 +16,10 @@ function App() {
 
   return (
     <div className="app">
-      <GoogleOAuthProvider clientId="707587160486-j7adbuqsr1ostdquto9rhdk783o42jq0.apps.googleusercontent.com">
       <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<LoginPage />} />
@@ -30,7 +28,6 @@ function App() {
         </Routes>
       </ThemeProvider>
       </BrowserRouter>
-    </GoogleOAuthProvider>
     </div>
   )
 }
